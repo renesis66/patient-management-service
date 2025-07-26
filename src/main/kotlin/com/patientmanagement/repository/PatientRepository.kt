@@ -1,6 +1,7 @@
 package com.patientmanagement.repository
 
 import com.patientmanagement.domain.Patient
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbIndex
@@ -11,6 +12,7 @@ import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional
 import java.util.*
 
 @Singleton
+@Requires(env = ["dynamodb"]) 
 class PatientRepository(
     private val dynamoDbEnhancedClient: DynamoDbEnhancedClient
 ) {
@@ -41,11 +43,17 @@ class PatientRepository(
                 .build()
         )
         
-        return gsi1.query(queryConditional)
-            .items()
-            .firstOrNull()
-            ?.let { Optional.of(it) }
-            ?: Optional.empty()
+        val results = gsi1.query(queryConditional)
+        val items = mutableListOf<Patient>()
+        results.forEach { page ->
+            items.addAll(page.items())
+        }
+        
+        return if (items.isEmpty()) {
+            Optional.empty()
+        } else {
+            Optional.of(items.first())
+        }
     }
 
     fun findAll(): List<Patient> {
