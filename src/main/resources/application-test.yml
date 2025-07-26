@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: patient-management-service
+  server:
+    port: 8080
+  security:
+    enabled: false
+
+# Disable AWS and DynamoDB for testing
+aws:
+  region: us-east-1
+  
+logger:
+  levels:
+    com.patientmanagement: DEBUG
+    root: INFO
