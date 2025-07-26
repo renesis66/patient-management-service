@@ -1,0 +1,10 @@
+aws:
+  region: ${AWS_REGION:us-east-1}
+  dynamodb:
+    endpoint: null  # Use real AWS DynamoDB
+    table-name-prefix: ${DYNAMODB_TABLE_PREFIX:patient-mgmt-prod-}
+
+logger:
+  levels:
+    com.patientmanagement: INFO
+    software.amazon.awssdk: WARN
