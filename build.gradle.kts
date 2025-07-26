@@ -20,6 +20,7 @@ dependencies {
 
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.security:micronaut-security-jwt")
@@ -31,6 +32,7 @@ dependencies {
     implementation("software.amazon.awssdk:dynamodb-enhanced")
     
     runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("org.yaml:snakeyaml")
 
     testImplementation("io.micronaut:micronaut-http-client")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
@@ -65,6 +67,7 @@ tasks {
 graalvmNative.toolchainDetection = false
 
 micronaut {
+    version("4.2.1")
     runtime("netty")
     testRuntime("junit5")
     processing {

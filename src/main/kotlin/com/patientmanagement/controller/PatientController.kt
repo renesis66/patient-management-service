@@ -9,7 +9,7 @@ import io.micronaut.security.annotation.Secured
 import io.micronaut.security.rules.SecurityRule
 
 @Controller("/patients")
-@Secured(SecurityRule.IS_AUTHENTICATED)
+@Secured(SecurityRule.IS_ANONYMOUS)
 class PatientController(
     private val patientService: PatientService
 ) {
@@ -57,5 +57,15 @@ class PatientController(
         } else {
             HttpResponse.notFound()
         }
+    }
+
+    @Options
+    fun optionsPatients(): HttpResponse<Void> {
+        return HttpResponse.ok()
+    }
+
+    @Options("/{id}")
+    fun optionsPatientById(@PathVariable id: String): HttpResponse<Void> {
+        return HttpResponse.ok()
     }
 }
