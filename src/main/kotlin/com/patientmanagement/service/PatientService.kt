@@ -1,14 +1,14 @@
 package com.patientmanagement.service
 
 import com.patientmanagement.domain.Patient
-import com.patientmanagement.repository.PatientRepository
+import com.patientmanagement.repository.InMemoryPatientRepository
 import jakarta.inject.Singleton
 import java.time.Instant
 import java.util.*
 
 @Singleton
 class PatientService(
-    private val patientRepository: PatientRepository
+    private val patientRepository: InMemoryPatientRepository
 ) {
     
     fun createPatient(patient: Patient): Patient {
