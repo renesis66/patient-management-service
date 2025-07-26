@@ -36,6 +36,28 @@ Patient Management Service built with Micronaut and Kotlin, using DynamoDB for d
 ./gradlew clean
 ```
 
+## Starting Services
+
+### DynamoDB Local
+```bash
+# Start DynamoDB Local (run from DynamoDB Local directory)
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -port 8000
+```
+
+### Patient Management Service
+```bash
+# Start with in-memory repository (for testing/development)
+java -Dmicronaut.environments=test -jar build/libs/patient-management-service-0.1-all.jar
+
+# Start with DynamoDB (requires DynamoDB Local to be running)
+java -Dmicronaut.environments=dynamodb -jar build/libs/patient-management-service-0.1-all.jar
+
+# Run in background
+java -Dmicronaut.environments=test -jar build/libs/patient-management-service-0.1-all.jar > service.log 2>&1 &
+```
+
+Service will be available at: **http://localhost:8080**
+
 ## DynamoDB Table Design
 
 Single table: `patients`
