@@ -1,4 +1,4 @@
-package com.patientmanagement.domain
+package com.healthcare.patient.domain
 
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey

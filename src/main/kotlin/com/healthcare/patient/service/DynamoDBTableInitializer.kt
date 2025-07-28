@@ -1,6 +1,6 @@
-package com.patientmanagement.service
+package com.healthcare.patient.service
 
-import com.patientmanagement.domain.Patient
+import com.healthcare.patient.domain.Patient
 import io.micronaut.context.annotation.Requires
 import io.micronaut.context.event.ApplicationEventListener
 import io.micronaut.runtime.server.event.ServerStartupEvent

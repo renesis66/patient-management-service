@@ -1,4 +1,4 @@
-package com.patientmanagement
+package com.healthcare.patient
 
 import io.micronaut.runtime.Micronaut.run
 

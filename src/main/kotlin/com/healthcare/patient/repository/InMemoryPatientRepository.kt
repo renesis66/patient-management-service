@@ -1,6 +1,6 @@
-package com.patientmanagement.repository
+package com.healthcare.patient.repository
 
-import com.patientmanagement.domain.Patient
+import com.healthcare.patient.domain.Patient
 import io.micronaut.context.annotation.Primary
 import jakarta.inject.Singleton
 import java.util.*
