@@ -1,7 +1,7 @@
-package com.patientmanagement.service
+package com.healthcare.patient.service
 
-import com.patientmanagement.domain.Patient
-import com.patientmanagement.repository.InMemoryPatientRepository
+import com.healthcare.patient.domain.Patient
+import com.healthcare.patient.repository.InMemoryPatientRepository
 import jakarta.inject.Singleton
 import java.time.Instant
 import java.util.*

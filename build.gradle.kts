@@ -7,7 +7,7 @@ plugins {
 }
 
 version = "0.1"
-group = "com.patientmanagement"
+group = "com.healthcare.patient"
 
 repositories {
     mavenCentral()
@@ -44,7 +44,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("com.patientmanagement.ApplicationKt")
+    mainClass.set("com.healthcare.patient.ApplicationKt")
 }
 
 java {
@@ -72,6 +72,6 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("com.patientmanagement.*")
+        annotations("com.healthcare.patient.*")
     }
 }

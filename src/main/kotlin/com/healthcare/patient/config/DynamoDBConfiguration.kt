@@ -1,4 +1,4 @@
-package com.patientmanagement.config
+package com.healthcare.patient.config
 
 import io.micronaut.context.annotation.Bean
 import io.micronaut.context.annotation.Factory
