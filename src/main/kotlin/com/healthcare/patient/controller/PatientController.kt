@@ -8,7 +8,7 @@ import io.micronaut.http.annotation.*
 import io.micronaut.security.annotation.Secured
 import io.micronaut.security.rules.SecurityRule
 
-@Controller("/patients")
+@Controller("/api/v1/patients")
 @Secured(SecurityRule.IS_ANONYMOUS)
 class PatientController(
     private val patientService: PatientService
